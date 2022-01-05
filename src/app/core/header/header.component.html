@@ -1,0 +1,25 @@
+<div class="main">
+    <div class="menu">
+        <div class="menu-content">
+            <img src="../../../assets/header/GLOBE ICON BLUE.png" >
+           <a  nz-dropdown [nzDropdownMenu]="menu">
+               <span >中文简体</span>
+               <i nz-icon nzType="down"></i>
+           </a>
+           <nz-dropdown-menu #menu="nzDropdownMenu">
+               <ul nz-menu nzSelectable>
+                 <li nz-menu-item>中文</li>
+                 <li nz-menu-item>英文</li>
+               </ul>
+           </nz-dropdown-menu>
+        </div>
+        <div class="operation">
+            <img src="../../../assets/header/message.png" >
+            <span >消息中心</span> 
+        </div>
+        <div class="back">
+            <img src="../../../assets/header/LOGOUT(1).png" >
+            <span>退出</span>
+        </div>
+    </div>
+</div>

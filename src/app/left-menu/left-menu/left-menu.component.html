@@ -1,0 +1,12 @@
+<ul nz-menu nzTheme="light" nzMode="inline">
+     <div class="box"><img [src]="imageUrl" width="158.71px" height="30px"></div>
+    <li nz-menu-item >
+      <i nz-icon nzType="home" nzTheme="outline"></i>
+      <span>首页</span>
+    </li>
+    <li *ngFor = "let item of titleArrays,index as idx" nz-submenu [nzTitle]="item.title" [nzIcon]="item.iconType">
+      <ul>
+        <li nz-menu-item *ngFor = "let subItem of item.subTilte" (click) = "changeRouter(subItem.router)"><div [ngClass] = "{'chooseCircle':true}" ></div>{{subItem.title}} </li>
+      </ul>
+    </li>
+</ul>

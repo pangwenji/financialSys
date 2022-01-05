@@ -1,0 +1,67 @@
+<div class="main">
+  <div class="title"></div>
+  <div class="content">
+    <div class="content-header">
+      <div class="content-header-button">
+            <div class="button" [ngClass]="{'isActive':isShow}" (click) = "createOrder()">由我开立</div>
+            <div class="button" [ngClass]="{'isActive':!isShow}" (click) = "receiveOrder()">由我接收</div>
+      </div>
+      <div class="input_text"> 
+              <div class="input_text_select" >
+                <nz-select [(ngModel)]="status" style="width: 176px;color: #6a74a5;font-size: 16px;">
+                  <nz-option *ngFor = "let item  of statusArray,let index as idx" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+                </nz-select>
+              </div>
+              <div class="input_text_select">
+                <nz-select [(ngModel)]="time" style="width: 176px;color: #6a74a5;font-size: 16px;">
+                  <nz-option *ngFor = "let item  of tiemArray,let index as idx" [nzValue]="item.value" [nzLabel]="item.label" ></nz-option>
+                </nz-select>
+              </div>
+      </div>
+      <div class="box_table" >
+        <nz-card *ngFor = "let item of list ,let index as idx">
+          <div class="table-title">
+            <div class="table-title-box">
+               <span class="table-title-label">订单时间</span>
+               <span class="table-title-text">{{item.time}}</span>
+            </div>
+            <div  class="table-title-box">
+               <span class="table-title-label">订单编号</span>
+               <span class="table-title-text">{{item.no}}</span>
+           </div>
+           <div  class="table-title-box">
+              <span class="table-title-label">交易对手</span>
+              <span class="table-title-text">{{item.buyerNamer}}</span>
+           </div>
+          </div>
+          <nz-table  #basicTable [nzData]="item.data"  [nzScroll]="{ x: '1200px', y: '240px' }">
+            <thead>
+              <tr class="th" style="margin-top: 42px;">
+                <th class="th_title">开立时间</th>
+                <th class="th_title">发票编号</th>
+                <th class="th_title">币种</th>
+                <th class="th_title">结算金额</th>
+                <th class="th_title">付款到期日</th>
+                <th class="th_title">状态</th>
+                <th class="th_title">操作</th>
+              </tr>
+            </thead>
+            <tbody style="width: 1125px;height: 80px;">
+              <tr *ngFor="let data of basicTable.data">
+                <td>{{data.time}}</td>
+                <td>{{data.invoiceNo}}</td>
+                <td>{{data.acount}}</td>
+                <td>{{data.settlementAmount}}</td>
+                <td>{{data.paymentDueDate}}</td>
+                <td>{{data.status}}</td>
+                <td>{{data.action}}</td>
+              </tr>
+            </tbody>
+          </nz-table> 
+        </nz-card>
+      </div>
+      <div class="botttom-button">
+           +创建订单
+      </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+:host /deep/ .ant-menu-submenu-arrow{
+    display: none;
+}
+i:focus{
+    height: 12px;
+    width: 12px;
+    background-color: blue;
+}
+:host /deep/.ant-menu-item::after{
+    position: absolute;
+    top: 18px;
+    left: 26px;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    border-right: 0px;
+    border-radius: 50%;
+}
+:host /deep/ .ant-menu-item-selected::after{
+    background: blue;
+}
+.box{
+    margin: 29px 20px 0px 20px;
+}

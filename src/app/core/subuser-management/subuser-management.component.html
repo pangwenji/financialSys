@@ -1,0 +1,28 @@
+<div class="main">
+  <div>标题</div>
+    <div class="content">
+      <nz-card style="margin: 12px 12px;">
+        <nz-table #basicTable [nzData]="dataSet" nzOuterBordered nzBordered [nzFooter] = "footer" [nzShowPagination]='false'> 
+          <thead>
+            <tr>
+              <th nzAlign ='center'>平台编号</th>
+              <th nzAlign ='center'>用户名</th>
+              <th nzAlign ='center'>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td nzAlign ='center' style="width: 155px;">{{data.num}}</td>
+              <td nzAlign ='center'>{{data.userName}}</td>
+              <td nzAlign ='center' style="width: 158px;;"><span style="text-decoration: underline;color: #1890ff;margin-right: 12px;">重置密码</span><span style="text-decoration: underline;color: #1890ff;">删除</span></td>
+            </tr>
+          </tbody>
+          <ng-template #footer>
+            <div style="display:flex;justify-content: center;align-items: center;">
+              <button nz-button nzType="primary">添加子用户</button>
+            </div>
+          </ng-template>
+        </nz-table>
+      </nz-card>
+    </div>
+</div>

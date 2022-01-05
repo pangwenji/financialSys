@@ -1,0 +1,62 @@
+<div class="main">
+    <div class="title"></div>
+    <div class="content">
+      <div>
+        面包屑
+      </div>
+      <div class="image">
+         <app-common-header [title] = "title"></app-common-header>
+      </div>
+      <div class="content-header">
+        <div class="content-header-button">
+              <div class="button" [ngClass]="{'isActive':isShowCreate}" (click) = "createOrder()">已创建订单</div>
+              <div class="button" [ngClass]="{'isActive':isShowReceive}" (click) = "receiveOrder()">已接收订单</div>
+              <div class="button" [ngClass]="{'isActive':isShowSave}" (click) = "tempateSave()">暂存</div>
+        </div>
+              <div class="input_text"> 
+                <div class="input_text_select" >
+                  <nz-select [(ngModel)]="status" style="width: 176px;color: #6a74a5;font-size: 16px;">
+                    <nz-option nzLabel="全部状态" nzValue="全部状态"></nz-option>
+                  </nz-select>
+                </div>
+                <div class="input_text_select">
+                  <nz-select [(ngModel)]="time" style="width: 176px;color: #6a74a5;font-size: 16px;">
+                    <nz-option nzValue="一年内" nzLabel="一年内" ></nz-option>
+                  </nz-select>
+                </div>
+              </div>
+      </div>
+        <div style="margin-top: 20px;">
+          <nz-table #basicTable [nzData]="listOfData">
+              <thead>
+                <tr >
+                  <th style="font-size: 14px;font-weight: 700;color: rgb(34, 34, 34);background: #F5F7FC;">订单时间</th>
+                  <th style="font-size: 14px;font-weight: 700;color: rgb(34, 34, 34);background: #F5F7FC;">订单编号</th>
+                  <th style="font-size: 14px;font-weight: 700;color: rgb(34, 34, 34);background: #F5F7FC;">货物描述</th>
+                  <th style="font-size: 14px;font-weight: 700;color: rgb(34, 34, 34);background: #F5F7FC;">交易对手</th>
+                  <th style="font-size: 14px;font-weight: 700;color: rgb(34, 34, 34);background: #F5F7FC;">目的地</th>
+                  <th style="font-size: 14px;font-weight: 700;color: rgb(34, 34, 34);background: #F5F7FC;">金额</th>
+                  <th style="font-size: 14px;font-weight: 700;color: rgb(34, 34, 34);background: #F5F7FC;">状态</th>
+                  <th style="font-size: 14px;font-weight: 700;color: rgb(34, 34, 34);background: #F5F7FC;">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr >
+                  <td>{{data.time}}</td>
+                  <td>{{data.opetrion}}</td>
+                  <td>{{data.number}}</td>
+                  <td>{{data.des}}</td>
+                  <td>{{data.des}}</td>
+                  <td>{{data.des}}</td>
+                  <td>{{data.des}}</td>
+                  <td>{{data.des}}</td>
+                  <td>{{data.opetrion}}</td> 
+                </tr> -->
+              </tbody>
+            </nz-table> 
+        </div>
+        <div class="botttom-button">
+             +创建订单
+        </div>
+    </div>
+</div>

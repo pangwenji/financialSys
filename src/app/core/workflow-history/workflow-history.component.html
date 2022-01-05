@@ -1,0 +1,42 @@
+<div class="main">
+      <div>面包</div>
+      <nz-card style="margin: 0px 12px;">
+          <div class="workflow">工作流记录</div>
+          <div>
+            <nz-table #basicTable [nzData]="dataSet" nzBordered>
+                <thead>
+                  <tr>
+                    <th nzAlign="center">提交时间</th>
+                    <th nzAlign="center" [colSpan]="colValue">
+                        <nz-range-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-range-picker>
+                    </th>
+                    <th nzAlign="center">业务编号/提交人</th>
+                    <th nzAlign="center" [colSpan]="colSpans">
+                        <nz-input-group [nzPrefix]="prefixTemplateUser" [nzSuffix]="suffixIconSearch">
+                            <input type="text" nz-input placeholder="input search text" />
+                          </nz-input-group>
+                          <ng-template #prefixTemplateUser>
+                            <i nz-icon nzType="search"></i>
+                          </ng-template>
+                          <ng-template #suffixIconSearch>
+                            <i nz-icon nzType="search"></i>
+                          </ng-template>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of basicTable.data">
+                    <td>{{data.name}}</td>
+                    <td>{{data.number}}</td>
+                    <td>{{data.bianhao}}</td>
+                    <td>{{data.user}}</td>
+                    <td>{{data.person}}</td>
+                    <td>{{data.fuheren}}</td>
+                    <td>{{data.fuheTime}}</td>
+                    <td>{{data.status}}</td>
+                  </tr>
+                </tbody>
+            </nz-table>
+          </div>
+      </nz-card>
+</div>

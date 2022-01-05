@@ -1,0 +1,115 @@
+<!-- <div class="main">
+    <div>fhg</div>
+   <div class="content">
+            <nz-card >
+                <nz-radio-group >
+                    <label nz-radio-button nzValue="value1">最近一个月</label>
+                    <label nz-radio-button nzValue="value2">最近三个月</label>
+                    <label nz-radio-button nzValue="value3">最近一年</label>
+                    <label nz-radio-button nzValue="value4">一年以前</label>
+                </nz-radio-group>
+            </nz-card>
+            <div [hidden] = 'isShowOneMoth' class="content-box">
+                <nz-table #basicTable [nzData]="dataSet">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>开立时间:2021-03-04 10：37：29</th>
+                        <th>发票编号</th>
+                        <th>交易对手</th>
+                        <th><button nz-button nzType="default">发送至进口商</button></th>
+                      </tr>
+                      <tr>
+                        <th><label nz-checkbox [(ngModel)]="checkValue"></label> </th>
+                        <th>序号</th>
+                        <th>上传时间</th>
+                        <th>文件</th>
+                        <th>类型</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let data of basicTable.data">
+                        <td><label nz-checkbox [(ngModel)]="checkValue"></label></td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.age}}</td>
+                        <td>{{data.address}}</td>
+                        <td>
+                          <a>Action 一 {{data.name}}</a>
+                          <nz-divider nzType="vertical"></nz-divider>
+                          <a>Delete</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </nz-table>
+            </div>
+            <div [hidden] = 'isShowThreeMoth'>
+                tuy
+            </div>
+            <div [hidden] = 'isShowOneYear'>
+              qwe
+            </div>
+             <div [hidden] = 'isShowOneYearBerfore'>
+              uyi
+            </div>
+   </div>
+</div> -->
+
+<div class="main">
+  <div class="title"></div>
+  <div class="content">
+    <div class="content-header">
+            <div class="content-header-button">
+                  <div class="button" [ngClass]="{'isActive':isShow}" (click) = "underOrder()">订单项下</div>
+                  <div class="button" [ngClass]="{'isActive':!isShow}" (click) = "underInvoice()">发票项下</div>
+            </div>
+            <div class="input_text"> 
+                <div class="input_text_select">
+                  <nz-select [(ngModel)]="time" style="width: 176px;color: #6a74a5;font-size: 16px;">
+                    <nz-option nzValue="一年内" nzLabel="一年内" ></nz-option>
+                  </nz-select>
+                </div>
+              </div>
+     </div>
+     <div>
+        <nz-card>
+          <nz-table #basicTable  nzBordered>
+            <thead>
+              <tr>
+                <th [colspan]="2">创建时间</th>
+                <th>2021-09-25 23:12:33</th>
+                <th>订单编号w920394</th>
+                <th>交易对手旺达公司</th>
+                 <th style="display: flex;justify-content: center;align-items: center;">
+                    <label nz-checkbox [(ngModel)]="checked">全选</label>
+                    <div class="button-left"></div>
+                    <div class="arrow-left"></div>
+                    <div class="button_table">发送至商家</div>
+                    <div class="button-right"></div>
+                  </th>
+              </tr>
+              <tr style="font-size: 14px;">
+                <th></th>
+                <th>序号</th>
+                <th>上传时间</th>
+                <th>文件</th>
+                <th>类型</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr >
+                <td>{{data.time}}</td>
+                <td>{{data.opetrion}}</td>
+                <td>{{data.number}}</td>
+                <td>{{data.des}}</td>
+                <td>{{data.des}}</td>
+                <td>{{data.des}}</td>
+                <td>{{data.des}}</td>
+                <td>{{data.des}}</td>
+                <td>{{data.opetrion}}</td> 
+              </tr> -->
+            </tbody>
+          </nz-table> 
+        </nz-card>
+     </div>
+  </div>
+</div>

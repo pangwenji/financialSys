@@ -1,0 +1,62 @@
+<div id="main">
+    <div class="content">
+        <div></div>
+        <div class="top">
+            <nz-card  style=" margin: 0 12px;">
+                    <span style="margin-right: 10px;">申请时间:</span>
+                         <div style="display: inline-block;">
+                            <nz-range-picker  ngModel (ngModelChange)="onChange()"></nz-range-picker>
+                         </div>
+                         <div style="display: inline-block;margin-left: 34px;">
+                            <span style="margin-right: 10px;">融资银行:</span>
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" style="width: 200px;" [(ngModel)]="selectedValue">
+                                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+                            </nz-select>
+                         </div>
+                         <div style="display: inline-block;margin-left: 34px;">
+                            <button nz-button  nzType="primary" style="width: 100px;margin-right: 4px;cursor: pointer;">查询</button>
+                            <button nz-button  style="width: 100px;cursor: pointer;" >重置</button>
+                         </div>
+            </nz-card>
+        </div>
+        <div class="bottom">
+              <nz-card style="margin: 12px 12px;">
+                <div><span style="border-left: 4px solid #1890ff;"></span><span>融资历史列表</span></div>
+                <div style="margin: 10px 0px;">
+                    <nz-radio-group >
+                        <label nz-radio-button nzValue="value1">最近一个月</label>
+                        <label nz-radio-button nzValue="value2">最近三个月</label>
+                        <label nz-radio-button nzValue="value3">最近一年</label>
+                        <label nz-radio-button nzValue="value4">一年以前</label>
+                    </nz-radio-group>
+                </div>
+                <div>
+                    <nz-table #basicTable [nzData]="dataSet">
+                        <thead>
+                          <tr>
+                            <th nzAlign="center">业务编号</th>
+                            <th nzAlign="center">申请时间</th>
+                            <th nzAlign="center">融资银行</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- <tr *ngFor="let data of basicTable.data">
+                            <td><label nz-checkbox [(ngModel)]="checkValue"></label></td>
+                            <td>{{data.name}}</td>
+                            <td>{{data.age}}</td>
+                            <td>{{data.address}}</td>
+                            <td>
+                              <a>Action 一 {{data.name}}</a>
+                              <nz-divider nzType="vertical"></nz-divider>
+                              <a>Delete</a>
+                            </td>
+                          </tr> -->
+                        </tbody>
+                    </nz-table>
+                </div>
+              </nz-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+  <div id = "main">
+         <div class="top"><app-major-top></app-major-top></div>
+         <div class="bottom">
+            <app-major-bottom></app-major-bottom>
+         </div>
+          <!-- <div class="top">
+            <nz-card style="width:auto;">
+                <span>欢迎你,BYD COMPANY LIMITED</span>
+                <span>上次登录时间:</span>
+                <span>平台编号:</span>
+            </nz-card>
+          </div>
+          <div class="bottom">
+              <div class="bottom-left">
+                   <div class="bottom-left-top">
+                      <span>我的订单</span>
+                      <span>查询更多></span>
+                   </div>
+                   <div class="bottom-left-middle">
+                     <div id='chart' [appEchartDir]="option" style="width:600px;height:280px;"></div>
+                   </div>
+                   <div class="bottom-left-bottom">
+                    <nz-table #basicTable [nzData]="listOfData">
+                      <thead>
+                        <tr>
+                          <th>订单编号</th>
+                          <th>订单时间</th>
+                          <th>交易对手</th>
+                          <th>金额</th>
+                          <th>状态</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let data of basicTable.data">
+                          <td>{{data.key}}</td>
+                          <td>{{data.name}}</td>
+                          <td>{{data.age}}</td>
+                          <td>{{data.address}}</td>
+                          <td>{{data.status}}</td>
+                        </tr>
+                      </tbody>
+                    </nz-table>
+                   </div>
+              </div>
+              <div class="bottom-right">
+                  <div class="title">
+                     <nz-card nzTitle="我的发票">
+                        <span>
+                           <div>
+                              <p>19</p>
+                              <p>全部发票</p>
+                           </div>
+                        </span>
+                     </nz-card>
+                  </div>
+                  <div class="message">
+                    <nz-card nzTitle="消费中心" [nzExtra]="extraTemplate">
+
+                    </nz-card>
+                    <ng-template #extraTemplate>
+                      <a>查询全部</a>
+                    </ng-template>
+                  </div>
+              </div>
+          </div> -->
+  </div>

@@ -1,0 +1,53 @@
+<div class="main">
+    <div class="cotnent">
+        <nz-card style="margin: 12px 12px;">
+            <div class="title-top">录用付款信息</div>
+            <div>
+                <nz-radio-group >
+                    <label nz-radio-button nzValue="value1">最近一个月</label>
+                    <label nz-radio-button nzValue="value2">最近三个月</label>
+                    <label nz-radio-button nzValue="value3">最近一年</label>
+                    <label nz-radio-button nzValue="value4">一年以前</label>
+                </nz-radio-group>
+            </div>
+            <div class="title-bottom" *ngFor="let item of listOfData">
+                <nz-table #basicTable [nzData]="item.dataList">
+                    <thead>
+                      <tr>
+                        <th><label nz-checkbox [(ngModel)]="checkValue"></label></th>
+                        <th>序号</th>
+                        <th>订单时间</th>
+                        <th>{{item.dingDanTime}}</th>
+                        <th>订单号码</th>
+                        <th>{{item.dingDanNumber}}</th>
+                        <th>交易对手</th>
+                        <th>{{item.userName}}</th>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th>开立时间</th>
+                        <th>发票编号</th>
+                        <th>币种</th>
+                        <th>结算金额</th>
+                        <th>付款到期日</th>
+                        <th>状态</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let data of basicTable.data">
+                        <td><label nz-checkbox [(ngModel)]="checkValue"></label></td>
+                        <td>{{data.number}}</td>
+                        <td>{{data.time}}</td>
+                        <td>{{data.invoidNumber}}</td>
+                        <td>{{data.USD}}</td>
+                        <td>{{data.money}}</td>
+                        <td>{{data.endTime}}</td>
+                        <td>{{data.status}}</td>
+                      </tr>
+                    </tbody>
+                  </nz-table>
+            </div>
+        </nz-card>
+    </div>
+</div>

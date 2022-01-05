@@ -1,0 +1,12 @@
+<nz-layout>
+  <nz-sider><app-left-menu></app-left-menu></nz-sider>
+  <nz-layout>
+    <nz-header>
+      <i class="trigger"  nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
+      <app-header></app-header>
+    </nz-header>
+    <nz-content>
+      <router-outlet ></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
